@@ -22,14 +22,11 @@
 #  participant_id :integer
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
-#  genre          :integer
 #  email          :string
 #  belief         :string
 #
 
 class ParticipantProfile < ApplicationRecord
-
-enum genre: [:male, :female, :other]
 
 belongs_to :participant, optional: true
 
