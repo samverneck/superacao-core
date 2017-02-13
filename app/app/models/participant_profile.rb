@@ -12,6 +12,7 @@
 #  city           :string
 #  lat            :decimal(, )
 #  lng            :decimal(, )
+#  gender         :integer
 #  relationship   :string
 #  sons           :integer
 #  facebook       :string
@@ -27,6 +28,8 @@
 #
 
 class ParticipantProfile < ApplicationRecord
+
+enum gender: [:prefer_not_to_disclose, :male, :female, :other]
 
 belongs_to :participant, optional: true
 

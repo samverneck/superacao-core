@@ -34,7 +34,7 @@ def profile_generator(participant, treatment: false)
   profile.whatsapp      = Faker::Internet.url
   profile.youtube       = Faker::Internet.url
   profile.snapchat      = Faker::Internet.url
-  profile.genre         = [:male, :female, :other].sample
+  profile.gender        = [:male, :female, :other].sample
   profile.email         = Faker::Internet.email
   profile.belief        = Faker::Food::spice
 

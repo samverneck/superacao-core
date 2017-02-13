@@ -19,7 +19,8 @@ class Participant < ApplicationRecord
   enum cancer_status: [:overcome, :during_treatment]
 
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" },
-                     default_url: lambda { |attach| "/images/:style/#{attach.instance.participant_profile.genre}_participant.png"}
+                     default_url: lambda { |attach| "/images/:style/#{attach.instance.participant_profile.gender}_participant.png"}
+
   validates :uid, uniqueness: true, allow_nil: false, if: 'uid.present?'
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
