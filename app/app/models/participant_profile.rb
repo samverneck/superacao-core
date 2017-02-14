@@ -13,7 +13,7 @@
 #  lat            :decimal(, )
 #  lng            :decimal(, )
 #  gender         :integer
-#  relationship   :string
+#  marital_status :integer
 #  sons           :integer
 #  facebook       :string
 #  instagram      :string
@@ -29,7 +29,8 @@
 
 class ParticipantProfile < ApplicationRecord
 
-enum gender: [:prefer_not_to_disclose, :male, :female, :other]
+enum gender: [:not_disclose, :male, :female, :other], _prefix: :gender
+enum marital_status: [:not_disclose, :single, :married, :divorced, :widowed, :civil_union, :domestic_partnership, :other], _prefix: :marital_status
 
 belongs_to :participant, optional: true
 

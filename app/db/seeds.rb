@@ -18,25 +18,25 @@ mission_types  = MissionType.all
 
 def profile_generator(participant, treatment: false)
   profile = ParticipantProfile.new
-  profile.first_name = Faker::Name.first_name
-  profile.last_name = Faker::Name.last_name
-  profile.occupation = Faker::Name.title
-  profile.birthdate     = Faker::Date.birthday
-  profile.country       = Faker::Address.country
-  profile.state         = Faker::Address.state
-  profile.city          = Faker::Address.city
-  profile.lat           = Faker::Address.latitude
-  profile.lng           = Faker::Address.longitude
-  profile.relationship  = 'Solteira'
-  profile.sons          = rand(0..5)
-  profile.facebook      = Faker::Internet.url
-  profile.instagram     = Faker::Internet.url
-  profile.whatsapp      = Faker::Internet.url
-  profile.youtube       = Faker::Internet.url
-  profile.snapchat      = Faker::Internet.url
-  profile.gender        = [:male, :female, :other].sample
-  profile.email         = Faker::Internet.email
-  profile.belief        = Faker::Food::spice
+  profile.first_name      = Faker::Name.first_name
+  profile.last_name       = Faker::Name.last_name
+  profile.occupation      = Faker::Name.title
+  profile.birthdate       = Faker::Date.birthday
+  profile.country         = Faker::Address.country
+  profile.state           = Faker::Address.state
+  profile.city            = Faker::Address.city
+  profile.lat             = Faker::Address.latitude
+  profile.lng             = Faker::Address.longitude
+  profile.marital_status  = [:single, :married, :divorced, :widowed, :civil_union, :domestic_partnership].sample
+  profile.sons            = rand(0..5)
+  profile.facebook        = Faker::Internet.url
+  profile.instagram       = Faker::Internet.url
+  profile.whatsapp        = Faker::Internet.url
+  profile.youtube         = Faker::Internet.url
+  profile.snapchat        = Faker::Internet.url
+  profile.gender          = [:male, :female, :other].sample
+  profile.email           = Faker::Internet.email
+  profile.belief          = Faker::Food::spice
 
   participant.profile = profile
   treatment_profiles(participant) if treatment

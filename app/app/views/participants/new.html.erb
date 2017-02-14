@@ -84,6 +84,16 @@
             <div class="hr-line-dashed"></div>
             <div class="row form-group">
               <div class="col-sm-2">
+                <%=f.label(:gender, "Estado civil", class: "control-label")%>
+              </div>
+              <div class="col-sm-10">
+                <%=f.select(:marital_status, ParticipantProfile.marital_statuses.keys.map { |w| [w.humanize, w] }, {}, { class: "form-control" })%>
+              </div>
+            </div>
+
+            <div class="hr-line-dashed"></div>
+            <div class="row form-group">
+              <div class="col-sm-2">
                 <%=f.label(:city, "Cidade", class: "control-label")%>
               </div>
               <div class="col-sm-4">

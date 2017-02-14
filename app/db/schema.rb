@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170213145212) do
+ActiveRecord::Schema.define(version: 20170214210801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,7 +78,6 @@ ActiveRecord::Schema.define(version: 20170213145212) do
     t.string   "city"
     t.decimal  "lat"
     t.decimal  "lng"
-    t.string   "relationship"
     t.integer  "sons"
     t.string   "facebook"
     t.string   "instagram"
@@ -91,6 +90,7 @@ ActiveRecord::Schema.define(version: 20170213145212) do
     t.string   "email"
     t.string   "belief"
     t.integer  "gender",         default: 0
+    t.integer  "marital_status", default: 0
     t.index ["participant_id"], name: "index_participant_profiles_on_participant_id", using: :btree
   end
 
