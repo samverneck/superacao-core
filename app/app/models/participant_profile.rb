@@ -14,7 +14,7 @@
 #  lng            :decimal(, )
 #  gender         :integer
 #  marital_status :integer
-#  sons           :integer
+#  children       :integer
 #  facebook       :string
 #  instagram      :string
 #  whatsapp       :string

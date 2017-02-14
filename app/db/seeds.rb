@@ -28,7 +28,7 @@ def profile_generator(participant, treatment: false)
   profile.lat             = Faker::Address.latitude
   profile.lng             = Faker::Address.longitude
   profile.marital_status  = [:single, :married, :divorced, :widowed, :civil_union, :domestic_partnership].sample
-  profile.sons            = rand(0..5)
+  profile.children        = rand(0..5)
   profile.facebook        = Faker::Internet.url
   profile.instagram       = Faker::Internet.url
   profile.whatsapp        = Faker::Internet.url
