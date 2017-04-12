@@ -10,6 +10,13 @@ en:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Please review the problems below:"
+    placeholders:
+      participant_profile:
+        facebook: "Facebook"
+        instagram: "Instagram"
+        whatsapp: "Whatsapp"
+        youtube: "Youtube Channel"
+        snapchat: "Snapchat"
     # Examples
     # labels:
     #   defaults:

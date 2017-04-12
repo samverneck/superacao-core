@@ -6,7 +6,25 @@
       <div class="ibox float-e-margins">
         <div class="ibox-title"><h5>Criar Participante</h5></div>
         <div class="ibox-content">
-          <%=form_for :participant_profile, url: participants_path, :html => {:class=>'from-horizontal'} do |f|%>
+          <%= simple_form_for @participant_profile, url: participants_path, method: :post do |f|%>
+            <%= f.error_notification %>
+            <%= f.input :participant_type, collection: ['Anjo','Arcanjo', 'Superador'], as: :radio_buttons, required: true %>
+            <%= f.simple_fields_for :participant do |participant| %>
+              <%= participant.input :pacient, collection: ['Paciente','Familiar'], as: :radio_buttons, required: true %>
+            <% end %>
+            <%= f.input :first_name, required: true %>
+            <%= f.input :last_name, required: true %>
+            <%= f.input :birthdate, as: :date, required: true %>
+            <%= f.input :city, required: true %>
+            <%= f.input :state, required: true %>
+            <%= f.input :country, required: true %>
+            <%= f.input :facebook, required: false, label:false %>
+            <%= f.input :instagram, required: false, label:false %>
+            <%= f.input :whatsapp, required: false, label:false %>
+            <%= f.input :youtube, required: false, label:false %>
+            <%= f.input :snapchat, required: false, label:false %>
+          <% end %>
+          <%= form_for :participant_profile, url: participants_path, :html => {:class=>'from-horizontal'} do |f|%>
 
             <div class="row form-group">
               <div class="col-sm-2">
@@ -55,7 +73,7 @@
             <div class="hr-line-dashed"></div>
             <div class="row form-group">
               <div class="col-sm-2">
-                <%=f.label(:brithdate, "Data de Nascimento", class: "control-label")%>
+                <%=f.label(:birthdate, "Data de Nascimento", class: "control-label")%>
               </div>
               <div class="col-sm-10">
                 <%=f.date_field(:birthdate, class: "form-control", :required => true)%>

@@ -159,6 +159,8 @@ SimpleForm.setup do |config|
 
   # Define the default class of the input wrapper of the boolean input.
   config.boolean_label_class = 'checkbox'
+  # Override the need for country_select gem
+  config.input_mappings = { /country/ => :string }
 
   # Defines if the default input wrapper class should be included in radio
   # collection wrappers.
