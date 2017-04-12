@@ -8,13 +8,30 @@ pt-BR:
       trinity:
         angel: 'Anjo'
         archangel: 'Arcanjo'
-    "yes": 'Yes'
-    "no": 'No'
+      participant_profile:
+        first_name: 'Nome'
+        last_name: 'Sobrenome'
+        birthdate: 'Data de nascimento'
+        city: 'Cidade'
+        state: 'Estado'
+        country: 'País'
+        participant_type: 'Tipo do participante'
+        participant:
+          pacient: 'Paciente ou Familiar'
+    'yes': 'Yes'
+    'no': 'No'
     required:
       text: 'required'
       mark: '*'
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
-      # html: '<abbr title="required">*</abbr>'
+      # html: '<abbr title='required'>*</abbr>'
     error_notification:
-      default_message: "Por favor reveja os problemas abaixo:"
+      default_message: 'Por favor reveja os problemas abaixo:'
+    placeholders:
+      participant_profile:
+        facebook: 'Facebook'
+        instagram: 'Instagram'
+        whatsapp: 'Whatsapp'
+        youtube: 'Canal do Youtube'
+        snapchat: 'Snapchat'
