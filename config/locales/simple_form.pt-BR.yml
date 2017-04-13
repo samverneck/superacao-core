@@ -22,6 +22,7 @@ pt-BR:
         participant_type: 'Tipo do participante'
         participant:
           pacient: 'Paciente ou Familiar'
+          cancer_status: 'Situação'
     'yes': 'Yes'
     'no': 'No'
     required:

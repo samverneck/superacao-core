@@ -32,8 +32,10 @@ class Api::V1::ParticipantsController < BaseController
   end
 
   def create
+    binding.pry
     pariticipant_type = params["participant_profile"]["participant_type"]
     participant = Object.const_get(pariticipant_type).new
+    participant.pacient = params["participant_profile"]["participant"]["pacient"]
     participant_profile = ParticipantProfile.create(participant_profile_params)
     participant_profile.participant = participant
     if participant.save && participant_profile.save

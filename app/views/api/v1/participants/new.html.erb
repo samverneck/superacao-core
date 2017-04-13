@@ -11,7 +11,7 @@
             <div class="hr-line-dashed"></div>
             <%= f.input :participant_type, collection: [['Anjo','Angel'],['Arcanjo', 'Archangel'], ['Superador', 'Overcomer']], as: :radio_buttons, required: true %>
             <%= f.simple_fields_for :participant do |participant| %>
-              <%= participant.input :pacient, collection: ['Paciente','Familiar'], as: :radio_buttons, required: true %>
+              <%= participant.input :pacient, collection: [['Paciente','myself'],['Familiar','family_member']], as: :radio_buttons, required: true %>
             <% end %>
             <%= f.input :first_name, required: true %>
             <%= f.input :last_name, required: true %>
@@ -30,6 +30,12 @@
             <%= f.input :whatsapp, required: false, label:false %>
             <%= f.input :youtube, required: false, label:false %>
             <%= f.input :snapchat, required: false, label:false %>
+            <div class="hr-line-dashed"></div>
+            <div class="ibox-title"><h5>Sobre o câncer</h5></div>
+            <div class="hr-line-dashed"></div
+            <%= f.simple_fields_for :participant do |participant| %>
+              <%= participant.input :cancer_status, collection: [['Em tratamento','during_treatment'],['Curado','overcome']], as: :radio_buttons, required: true %>
+            <% end %>
             <div class="hr-line-dashed"></div>
             <%= f.button :submit, 'Salvar Participante', class: 'btn btn-primary' %>
             <%= button_tag "Limpar dados", type: :reset, :class =>"btn btn-white" %>
