@@ -32,9 +32,15 @@
             <%= f.input :snapchat, required: false, label:false %>
             <div class="hr-line-dashed"></div>
             <div class="ibox-title"><h5>Sobre o câncer</h5></div>
-            <div class="hr-line-dashed"></div
+            <div class="hr-line-dashed"></div>
             <%= f.simple_fields_for :participant do |participant| %>
-              <%= participant.input :cancer_status, collection: [['Em tratamento','during_treatment'],['Curado','overcome']], as: :radio_buttons, required: true %>
+              <%= participant.input :cancer_status, collection: [['Em tratamento','during_treatment'],['Câncer superado ou em remissão','overcome']], as: :radio_buttons, required: true %>
+              <div class="current-treatment" hidden=true>
+                <div class="ibox-title"><h5>Câncer atual</h5></div>
+              </div>
+              <div class="past-treatment" hidden=true>
+                <div class="ibox-title"><h5>Câncer superado</h5></div>
+              </div>
             <% end %>
             <div class="hr-line-dashed"></div>
             <%= f.button :submit, 'Salvar Participante', class: 'btn btn-primary' %>

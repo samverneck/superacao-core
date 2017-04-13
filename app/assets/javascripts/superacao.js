@@ -1,5 +1,14 @@
 
 $(document).ready(function () {
+  $("#participant_profile_participant_cancer_status_during_treatment").on('change', function(){
+    $(".current-treatment").show();
+    $(".past-treatment").hide();
+  });
+  $("#participant_profile_participant_cancer_status_overcome").on('change', function(){
+    $(".current-treatment").hide();
+    $(".past-treatment").show();
+    
+  });
   $('.delete-action').click(function () {
       var action_url = $(this).data('action')
       var success_redirect = $(this).data('success-redirect')
