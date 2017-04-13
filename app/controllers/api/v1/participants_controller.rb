@@ -33,10 +33,10 @@ class Api::V1::ParticipantsController < BaseController
 
   def create
     pariticipant_type = params["participant_profile"]["participant_type"]
-    participant = Object.const_get(pariticipant_type.capitalize).new
+    participant = Object.const_get(pariticipant_type).new
     participant_profile = ParticipantProfile.create(participant_profile_params)
-    participant.participant_profile = participant_profile
-    if participant.save
+    participant_profile.participant = participant
+    if participant.save && participant_profile.save
       redirect_to participants_path, :notice => "Participante criado com sucesso"
     end
   end
@@ -49,6 +49,6 @@ class Api::V1::ParticipantsController < BaseController
 
   private
   def participant_profile_params
-    params.require(:participant_profile).permit(:first_name,:last_name, :birthdate, :occupation, :city, :state, :country, :facebook, :instagram, :whatsapp, :youtube, :snapchat)
+    params.require(:participant_profile).permit(:first_name,:last_name, :email, :relationship, :belief, :genre, :occupation, :birthdate, :occupation, :city, :state, :country, :facebook, :instagram, :whatsapp, :youtube, :snapchat)
   end
 end

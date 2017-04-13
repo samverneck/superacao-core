@@ -11,6 +11,10 @@ pt-BR:
       participant_profile:
         first_name: 'Nome'
         last_name: 'Sobrenome'
+        email: 'E-mail'
+        relationship: 'Estado civil'
+        occupation: 'Profissão'
+        belief: 'Crença'
         birthdate: 'Data de nascimento'
         city: 'Cidade'
         state: 'Estado'
