@@ -34,8 +34,8 @@
             <div class="ibox-title"><h5>Sobre o câncer</h5></div>
             <div class="hr-line-dashed"></div>
             <%= f.simple_fields_for :participant do |participant| %>
-              <%= participant.input :cancer_status, collection: [['Em tratamento','during_treatment'],['Câncer superado ou em remissão','overcome']], as: :radio_buttons, required: true %>
-              <div class="current-treatment" hidden=true>
+              <%= participant.input :cancer_status, collection: [['Em tratamento','during_treatment'],['Câncer superado ou em remissão','overcome']], checked: ['Em tratamento','during_treatment'], as: :radio_buttons, required: true %>
+              <div class="current-treatment">
                 <div class="ibox-title"><h5>Câncer atual</h5></div>
               </div>
               <div class="past-treatment" hidden=true>
