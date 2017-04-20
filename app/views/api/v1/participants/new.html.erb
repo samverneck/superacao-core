@@ -37,9 +37,30 @@
               <%= participant.input :cancer_status, collection: [['Em tratamento','during_treatment'],['Câncer superado ou em remissão','overcome']], checked: ['Em tratamento','during_treatment'], as: :radio_buttons, required: true %>
               <div class="current-treatment">
                 <div class="ibox-title"><h5>Câncer atual</h5></div>
+                <%= participant.simple_fields_for :current_treatment_profile do |current_treatment|%>
+                  <%= current_treatment.input :metastasis, as: :boolean, checked_value: true, unchecked_value: false %>
+                  <%= current_treatment.input :relapse, as: :boolean, checked_value: true, unchecked_value: false %>
+                  <div class="hr-line-dashed"></div>
+                  <%= current_treatment.simple_fields_for :cancer_treatment do |cancer_treatment|%>
+                    <%= cancer_treatment.input :cancer_type_id, collection: @cancer_types %>
+                  <% end %>
+                  <%= current_treatment.simple_fields_for :cancer_treatment do |treatment| %>
+                    <%@treatment_types.each do |treatment_type| %>
+                      <span><%= treatment_type.name %></span><br>
+                      <!-- checkboxes for status -->
+                      <br>
+                    <% end %>
+                  <% end %>
+                <% end %>
               </div>
               <div class="past-treatment" hidden=true>
                 <div class="ibox-title"><h5>Câncer superado</h5></div>
+                  <%= participant.simple_fields_for :past_treatment_profile do |past_treatment|%>
+                  <%= past_treatment.input :metastasis, as: :boolean, checked_value: true, unchecked_value: false %>
+                  <%= past_treatment.input :relapse, as: :boolean, checked_value: true, unchecked_value: false %>
+                  <div class="hr-line-dashed"></div>
+                <% end %>
+
               </div>
             <% end %>
             <div class="hr-line-dashed"></div>

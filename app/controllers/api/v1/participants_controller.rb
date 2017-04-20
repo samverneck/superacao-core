@@ -29,6 +29,8 @@ class Api::V1::ParticipantsController < BaseController
 
   def new
     @participant_profile = ParticipantProfile.new
+    @cancer_types = CancerType.all
+    @treatment_types = TreatmentType.all
   end
 
   def create

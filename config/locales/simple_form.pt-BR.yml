@@ -23,6 +23,9 @@ pt-BR:
         participant:
           pacient: 'Paciente ou Familiar'
           cancer_status: 'Situação'
+          metastasis: 'Metástase'
+          relapse: 'Reincidiva'
+      cancer_type: 'Câncer'
     'yes': 'Yes'
     'no': 'No'
     required:
